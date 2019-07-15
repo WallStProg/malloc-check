@@ -12,5 +12,6 @@ static void BM_benchmarkMalloc(benchmark::State& state) {
    }
 }
 BENCHMARK(BM_benchmarkMalloc);
+BENCHMARK(BM_benchmarkMalloc)->Threads(2);
 
 BENCHMARK_MAIN();
