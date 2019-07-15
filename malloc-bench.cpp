@@ -1,12 +1,12 @@
 #include <stdlib.h>
-#include <string.h>
+#include <memory.h>
 
 #include <benchmark/benchmark.h>
 
 static void BM_benchmarkMalloc(benchmark::State& state) {
-   std::string x;
+   char* p;
    while (state.KeepRunning()) {
-      char* p = (char*) malloc(384);
+      p = (char*) malloc(384);
       memset(p, 0xfefe, 384);
       free(p);
    }
